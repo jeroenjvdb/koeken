@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/koeken', ['as' => 'koeken.index', 'uses' => 'KoekenController@index']);
 Route::get('/test', ['as' => 'koeken.text', 'uses' => 'KoekenController@slackCommand']);
 Route::get('/koeken/{name}', ['as' => 'koeken.who', 'uses' => 'KoekenController@who']);
+Route::post('/koeken', ['as' => 'koeken.text', 'uses' => 'KoekenController@slackCommand']);

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Classes\Trello;
 
 use App\Http\Requests;
+use App\Jobs\Koeken;
 
 class KoekenController extends Controller
 {
@@ -31,6 +32,11 @@ class KoekenController extends Controller
         ];
 
         $this->send(config('slack.webhook'), $fields);
+    }
+
+    public function slackCommand()
+    {
+        $this->dispatch(new Koeken());
     }
 
     /**
